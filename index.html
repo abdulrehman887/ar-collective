@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AR COLLECTIVE | Thrift & Curated Finds</title>
+<style>
+:root{--bg:#070707;--panel:#111;--line:#302515;--gold:#e2b858;--gold2:#f6d886;--text:#f7f5ef;--muted:#aaa398;--green:#168447;--red:#a52d2d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}.nav{position:sticky;top:0;z-index:50;background:#070707f2;border-bottom:1px solid var(--line)}
+.navin{max-width:1180px;margin:auto;padding:10px 18px;display:flex;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:2px}.brand img{width:46px;height:46px;border-radius:50%;object-fit:cover}.links{display:flex;gap:18px;margin-left:auto}.links a{font-size:14px;color:#ddd}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;padding:11px 16px;font-weight:800;cursor:pointer;background:linear-gradient(135deg,#f2cf73,#a87318);color:#090909}.wa{background:#168447;color:#fff}.hamb{display:none;background:none;color:#fff;border:0;font-size:25px}
+.hero{min-height:620px;background:linear-gradient(90deg,#050505e6,#05050555),url("hero.png") center/cover no-repeat;display:flex;align-items:center}.heroIn{max-width:1180px;width:100%;margin:auto;padding:75px 18px}.ey{font-size:12px;letter-spacing:5px;color:var(--gold2);font-weight:800}.hero h1{font-size:clamp(48px,8vw,88px);line-height:.88;margin:18px 0}.hero p{max-width:570px;color:#ddd;line-height:1.65;font-size:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.ghost{border:1px solid #80602d;border-radius:9px;padding:10px 16px;color:var(--gold2)}
+section{max-width:1180px;margin:auto;padding:70px 18px}.heading{text-align:center;margin-bottom:32px}.heading small{color:var(--gold2);letter-spacing:4px}.heading h2{font-size:38px;margin:8px 0}.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-bottom:25px}.cat{border:1px solid var(--line);background:#121212;color:#ddd;border-radius:999px;padding:9px 14px;cursor:pointer}.cat.active,.cat:hover{border-color:#80602d;color:var(--gold2);background:#211b11}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.tools input,.tools select,.form input,.form select,.form textarea{background:#0c0c0c;color:#fff;border:1px solid #342a1b;border-radius:8px;padding:11px}.search{flex:1;min-width:220px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:var(--panel);border:1px solid #292117;border-radius:14px;overflow:hidden}.pic{height:220px;background:#181818;display:flex;align-items:center;justify-content:center;color:#756a58;position:relative}.pic img{width:100%;height:100%;object-fit:cover}.sold{position:absolute;top:10px;right:10px;background:#8c2424;padding:6px 8px;border-radius:6px;font-size:11px;font-weight:900}.info{padding:15px}.tag{font-size:10px;letter-spacing:2px;color:var(--gold2)}.name{font-weight:900;font-size:18px;margin:6px 0}.meta{font-size:13px;color:#aaa;min-height:38px;line-height:1.45}.price{font-size:19px;font-weight:900;margin:10px 0}.card .btn{width:100%}.disabled{opacity:.5;pointer-events:none;background:#444;color:#ddd}.about,.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel{background:#0e0e0e;border:1px solid #292117;border-radius:15px;padding:25px}.panel h3{color:var(--gold2);margin-top:0}.panel p{color:#bbb;line-height:1.7}.socials{display:flex;gap:9px;flex-wrap:wrap}.social{border:1px solid #44351d;border-radius:8px;padding:10px 13px;color:var(--gold2)}
+footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:#8e887e;font-size:13px}.modal{display:none;position:fixed;inset:0;background:#000b;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.box{width:min(720px,100%);max-height:92vh;overflow:auto;background:#0e0e0e;border:1px solid #3b2e1a;border-radius:16px;padding:22px}.close{float:right;background:none;border:0;color:#aaa;font-size:25px;cursor:pointer}.form{display:grid;gap:10px}.form label{font-size:12px;color:#aaa}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.adminList{display:grid;gap:10px}.adminItem{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#151515;padding:12px;border-radius:9px;border:1px solid #292117}.miniBtns{display:flex;gap:7px;flex-wrap:wrap}.danger{background:var(--red);color:#fff}.secondary{background:#292929;color:#fff}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.links{display:none;position:absolute;top:67px;left:0;right:0;background:#090909;padding:15px 18px;flex-direction:column;border-bottom:1px solid var(--line)}.hamb{display:block;margin-left:auto}.navin>.wa{display:none}.about,.contact{grid-template-columns:1fr}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.hero{min-height:560px}.heroIn{padding:55px 18px}.row{grid-template-columns:1fr}.hero h1{font-size:55px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="navin">
+<a class="brand" href="#"><img src="logo.png" alt="AR COLLECTIVE logo"><span>AR COLLECTIVE</span></a>
+<div class="links" id="navLinks"><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#" onclick="openAdmin();return false">Admin</a></div>
+<a class="btn wa" href="https://wa.me/923191164207">WhatsApp</a><button class="hamb" onclick="toggleMenu()">☰</button>
+</div></nav>
+
+<header class="hero"><div class="heroIn">
+<div class="ey">CURATED • IMPORTED • THRIFT</div><h1>AR<br>COLLECTIVE</h1>
+<p>Sneakers, apparel, watches and accessories — carefully selected pieces with a premium streetwear feel.</p>
+<div class="actions"><a class="btn" href="#shop">SHOP ALL ITEMS</a><a class="ghost" href="https://wa.me/923191164207?text=Salam%20AR%20COLLECTIVE%2C%20I%20want%20to%20see%20available%20items.">ORDER ON WHATSAPP</a></div>
+</div></header>
+
+<section id="shop"><div class="heading"><small>THE COLLECTION</small><h2>All Items</h2></div>
+<div class="cats" id="cats"></div>
+<div class="tools"><input class="search" id="search" placeholder="Search shoes, tees, watches..." oninput="render()"><select id="sort" onchange="render()"><option value="new">Newest</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></div>
+<div class="grid" id="grid"></div></section>
+
+<section id="about"><div class="heading"><small>ABOUT</small><h2>Good finds. Cleanly curated.</h2></div><div class="about">
+<div class="panel"><h3>AR COLLECTIVE</h3><p>We bring together curated, imported and thrift fashion pieces — from sneakers and everyday apparel to watches and accessories.</p></div>
+<div class="panel"><h3>Easy ordering</h3><p>Choose an item, check its size and condition, then order directly through WhatsApp. No online payment is required.</p></div>
+</div></section>
+
+<section id="contact"><div class="heading"><small>CONTACT</small><h2>Get in touch</h2></div><div class="contact">
+<div class="panel"><h3>WhatsApp / Call</h3><p><a href="tel:+923191164207">0319 1164207</a></p><div class="actions"><a class="btn wa" href="https://wa.me/923191164207">WhatsApp</a><a class="btn" href="tel:+923191164207">Call Now</a></div></div>
+<div class="panel"><h3>Follow AR COLLECTIVE</h3><div class="socials"><a class="social" href="#" onclick="return false">Instagram</a><a class="social" href="#" onclick="return false">TikTok</a><a class="social" href="#" onclick="return false">Facebook</a></div><p>Add your social profile links later.</p></div>
+</div></section>
+<footer>© <span id="year"></span> AR COLLECTIVE • Sneakers • Apparel • Watches • Accessories</footer>
+
+<div class="modal" id="productModal"><div class="box"><button class="close" onclick="closeModal('productModal')">×</button><div id="productDetail"></div></div></div>
+<div class="modal" id="adminModal"><div class="box"><button class="close" onclick="closeModal('adminModal')">×</button><div id="adminRoot"></div></div></div>
+
+<script>
+"use strict";
+const KEY="ar_collective_products_v3";
+const demo=[
+{id:1,name:"Classic Black Sneakers",cat:"Shoes",price:3500,size:"42",condition:"9/10",desc:"Clean black sneakers, curated thrift find.",status:"available",img:""},
+{id:2,name:"Premium Oversized T-Shirt",cat:"T-Shirts",price:1500,size:"L",condition:"9/10",desc:"Relaxed fit everyday tee.",status:"available",img:""},
+{id:3,name:"Relaxed Fit Trousers",cat:"Trousers",price:2000,size:"32",condition:"9/10",desc:"Comfortable relaxed trousers.",status:"available",img:""},
+{id:4,name:"Classic Dial Watch",cat:"Watches",price:2500,size:"—",condition:"Excellent",desc:"Classic everyday watch.",status:"available",img:""},
+{id:5,name:"Streetwear Cap",cat:"Accessories",price:1200,size:"Free",condition:"Excellent",desc:"Minimal streetwear cap.",status:"available",img:""},
+{id:6,name:"Vintage Runner Sneakers",cat:"Shoes",price:4000,size:"41",condition:"8.5/10",desc:"Vintage runner style.",status:"available",img:""}
+];
+let products=[];
+try{products=JSON.parse(localStorage.getItem(KEY)||"null")||demo}catch(e){products=demo}
+let filter="All Items";
+function save(){try{localStorage.setItem(KEY,JSON.stringify(products))}catch(e){}}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function money(n){return "Rs. "+Number(n||0).toLocaleString("en-PK")}
+function wa(p){let text="Salam AR COLLECTIVE,%0A%0AI want to order:%0A%0AProduct: "+encodeURIComponent(p.name)+"%0APrice: "+encodeURIComponent(money(p.price))+"%0ASize: "+encodeURIComponent(p.size||"—")+"%0ACondition: "+encodeURIComponent(p.condition||"—")+"%0A%0AName:%0APhone:%0AAddress:";return "https://wa.me/923191164207?text="+text}
+function renderCats(){let cats=["All Items","Shoes","T-Shirts","Trousers","Watches","Accessories"];document.getElementById("cats").innerHTML=cats.map(c=>'<button class="cat '+(filter===c?"active":"")+'" onclick="setFilter(\''+c+'\')">'+c+"</button>").join("")}
+function setFilter(c){filter=c;render()}
+function render(){
+renderCats();
+let q=(document.getElementById("search").value||"").toLowerCase(),sort=document.getElementById("sort").value;
+let arr=products.filter(p=>(filter==="All Items"||p.cat===filter)&&(String(p.name)+" "+String(p.cat)+" "+String(p.size||"")).toLowerCase().includes(q));
+if(sort==="low")arr.sort((a,b)=>Number(a.price)-Number(b.price));if(sort==="high")arr.sort((a,b)=>Number(b.price)-Number(a.price));
+let grid=document.getElementById("grid");
+if(!arr.length){grid.innerHTML="<p style='color:#aaa'>No items found.</p>";return}
+grid.innerHTML=arr.map(p=>'<article class="card"><div class="pic">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'">':"Product Photo")+(p.status!=="available"?'<span class="sold">SOLD OUT</span>':"")+'</div><div class="info"><div class="tag">'+esc(p.cat).toUpperCase()+'</div><div class="name">'+esc(p.name)+'</div><div class="meta">Size: '+esc(p.size||"—")+" • Condition: "+esc(p.condition||"—")+'</div><div class="price">'+money(p.price)+'</div><button class="btn '+(p.status!=="available"?"disabled":"")+'" onclick="openProduct('+p.id+')">VIEW ITEM</button></div></article>').join("")
+}
+function openProduct(id){let p=products.find(x=>x.id===id);if(!p)return;document.getElementById("productDetail").innerHTML='<div class="pic" style="height:320px">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'">':"Product Photo")+'</div><div class="tag" style="margin-top:18px">'+esc(p.cat).toUpperCase()+'</div><h2>'+esc(p.name)+'</h2><h3 style="color:var(--gold2)">'+money(p.price)+'</h3><p style="color:#bbb">Size: '+esc(p.size||"—")+'<br>Condition: '+esc(p.condition||"—")+'</p><p style="color:#bbb;line-height:1.7">'+esc(p.desc||"")+'</p>'+(p.status==="available"?'<a class="btn wa" href="'+wa(p)+'">🟢 ORDER ON WHATSAPP</a>':'<button class="btn disabled">SOLD OUT</button>');document.getElementById("productModal").classList.add("show")}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+function toggleMenu(){let x=document.getElementById("navLinks");x.style.display=x.style.display==="flex"?"none":"flex"}
+function openAdmin(){
+document.getElementById("adminRoot").innerHTML='<h2>AR COLLECTIVE — Admin</h2><p style="color:#aaa">Products are saved in this browser. Add, edit, delete, or mark items sold.</p><div class="actions"><button class="btn" onclick="adminForm()">+ Add Product</button><button class="btn secondary" onclick="exportData()">Export Products</button><button class="btn secondary" onclick="resetDemo()">Reset Demo</button></div><div class="adminList" style="margin-top:20px">'+products.map(p=>'<div class="adminItem"><div><b>'+esc(p.name)+'</b><br><small style="color:#aaa">'+esc(p.cat)+" • "+money(p.price)+" • "+esc(p.status)+'</small></div><div class="miniBtns"><button class="btn secondary" onclick="adminForm('+p.id+')">Edit</button><button class="btn danger" onclick="deleteProduct('+p.id+')">Delete</button><button class="btn '+(p.status==="available"?"wa":"secondary")+'" onclick="toggleStatus('+p.id+')">'+(p.status==="available"?"Mark Sold":"Mark Available")+"</button></div></div>").join("")+"</div>";
+document.getElementById("adminModal").classList.add("show")
+}
+function adminForm(id){
+let p=id?products.find(x=>x.id===id):{name:"",cat:"Shoes",price:"",size:"",condition:"",desc:"",status:"available",img:""};
+document.getElementById("adminRoot").innerHTML='<h2>'+(id?"Edit":"Add")+' Product</h2><form class="form" onsubmit="submitProduct(event,'+(id||0)+')"><label>Product name<input id="f_name" required value="'+esc(p.name)+'"></label><div class="row"><label>Category<select id="f_cat">'+["Shoes","T-Shirts","Trousers","Watches","Accessories"].map(c=>'<option value="'+c+'" '+(p.cat===c?"selected":"")+'>'+c+"</option>").join("")+'</select></label><label>Price (PKR)<input id="f_price" type="number" min="0" required value="'+esc(p.price)+'"></label></div><div class="row"><label>Size / detail<input id="f_size" value="'+esc(p.size||"")+'" placeholder="42 / L / Free"></label><label>Condition<input id="f_condition" value="'+esc(p.condition||"")+'" placeholder="9/10"></label></div><label>Description<textarea id="f_desc" rows="4">'+esc(p.desc||"")+'</textarea></label><label>Product image URL<input id="f_img" value="'+esc(p.img||"")+'" placeholder="https://..."></label><div class="actions"><button class="btn" type="submit">Save Product</button><button class="btn secondary" type="button" onclick="openAdmin()">Cancel</button></div></form>'
+}
+function submitProduct(e,id){e.preventDefault();let p={id:id||Date.now(),name:document.getElementById("f_name").value.trim(),cat:document.getElementById("f_cat").value,price:Number(document.getElementById("f_price").value),size:document.getElementById("f_size").value.trim(),condition:document.getElementById("f_condition").value.trim(),desc:document.getElementById("f_desc").value.trim(),img:document.getElementById("f_img").value.trim(),status:"available"};if(id){let old=products.find(x=>x.id===id);p.status=old?old.status:"available";products=products.map(x=>x.id===id?p:x)}else products.unshift(p);save();render();openAdmin()}
+function deleteProduct(id){if(confirm("Delete this product?")){products=products.filter(p=>p.id!==id);save();render();openAdmin()}}
+function toggleStatus(id){products=products.map(p=>p.id===id?Object.assign({},p,{status:p.status==="available"?"sold":"available"}):p);save();render();openAdmin()}
+function resetDemo(){if(confirm("Reset all products to demo products?")){products=demo.slice();save();render();openAdmin()}}
+function exportData(){let blob=new Blob([JSON.stringify(products,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="ar-collective-products.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+document.getElementById("year").textContent=new Date().getFullYear();render();
+window.addEventListener("click",e=>{if(e.target.classList.contains("modal"))e.target.classList.remove("show")});
+</script>
+</body>
+</html>
